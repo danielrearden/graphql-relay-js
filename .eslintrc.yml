@@ -624,6 +624,16 @@ overrides:
     rules:
       node/no-unpublished-import: off
       import/no-extraneous-dependencies: [error, { devDependencies: true }]
+  - files: 'integrationTests/**'
+    rules:
+      node/no-unpublished-import: off
+      node/no-unpublished-require: off
+      node/no-sync: off
+      import/no-commonjs: off
+      import/no-extraneous-dependencies: [error, { devDependencies: true }]
+      import/no-nodejs-modules: off
+      import/unambiguous: off
+      no-console: off
   - files: 'resources/**'
     parserOptions:
       sourceType: script

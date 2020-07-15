@@ -24,12 +24,13 @@
     "prepublish": "./resources/prepublish.sh",
     "prettier": "prettier --write --list-different .",
     "prettier:check": "prettier --check .",
-    "test": "npm run lint && npm run check && npm run testonly && npm run prettier:check && npm run check:spelling",
+    "test": "npm run lint && npm run check && npm run testonly && npm run prettier:check && npm run check:spelling && npm run build && npm run check:integrations",
     "testonly": "mocha src/**/__tests__/**/*.js",
     "testonly:cover": "nyc npm run testonly",
     "lint": "eslint .",
     "check": "flow check",
     "check:spelling": "cspell '**/*'",
+    "check:integrations": "mocha --full-trace integrationTests/*-test.js",
     "build": "node resources/build.js"
   },
   "peerDependencies": {
